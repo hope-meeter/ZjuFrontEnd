@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<h1 style="text-align: left;">科学研究</h1>
+		<h4 style="text-align: left;">以下产品与本站无关，仅为友情链接，请仔细甄别！</h4>
 		<div style="text-align: left; display: flex;border: 1px solid #999;">
 			<!-- <img src="../assets/down.jpg" alt="枝江网络降重" /> -->
 			<div>
@@ -11,7 +12,7 @@
 		<div style="text-align: left; display: flex;border: 1px solid #999;">
 			<!-- <img src="https://asoulcnki.asia/favicon.ico" alt="知网查重" /> -->
 			<div>
-				<a class="link" href="https://asoulcnki.asia/"><h1>知网查重</h1></a>
+				<a class="link" href="https://asoulcnki.asia/"><h1>枝网查重</h1></a>
 				<span style="font-size: 20px;">能够对小作文进行查重、提供作文库服务等。</span>
 			</div>
 		</div>

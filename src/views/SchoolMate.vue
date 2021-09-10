@@ -39,6 +39,10 @@
 									sitekey="0b0fa1c5-e3bf-4148-9e65-03aa87f72433">
 								</vue-hcaptcha>
 							</v-col>
+							<span style="color: red;">
+								点击添加即视为您知晓并同意网站
+								<router-link to="/about#privacy">《隐私数据说明》</router-link>
+							</span>
 						</v-row>
 					</v-container>
 				</v-card-text>
