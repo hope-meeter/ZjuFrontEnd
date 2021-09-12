@@ -23,12 +23,12 @@
 							</v-col>
 							<v-col cols="12" sm="6">
 								<v-combobox v-model="record.contactMethod"
-									:items="['QQ', '微信', '电子邮箱', '豆瓣', '贴吧', '微博', '其他[在这里直接输入]']" label="联系方式*"
+									:items="['QQ', '微信', '电子邮箱', '豆瓣', '贴吧', '微博', '其他[在这里直接输入]']" label="联系方式"
 									required>
 								</v-combobox>
 							</v-col>
 							<v-col cols="12" sm="6">
-								<v-text-field v-model="record.contactContent" label="ID*" required></v-text-field>
+								<v-text-field v-model="record.contactContent" label="ID" required></v-text-field>
 							</v-col>
 							<v-col cols="12">
 								<v-text-field v-model="record.password" label="口令*(至少1字符的任意字符串,用于辨认身份,请牢记)" required>
@@ -203,8 +203,7 @@
 			},
 			addRecord() {
 				if ((!this.record.nickName) || (!this.record.schoolName) ||
-					(!this.record.text) || (!this.record.contactMethod) ||
-					(!this.record.contactContent) || (!this.record.password)) {
+					(!this.record.text) || (!this.record.password)) {
 					alert("请完整填写")
 					return
 				}
