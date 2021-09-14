@@ -125,6 +125,13 @@
 </style>
 
 <script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?7d1cc9098efb5ef7b72768c59d431293";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
 	export default {
 		data() {
 			return {
