@@ -9,6 +9,7 @@
 					<v-container>
 						<v-row>
 							<span>站长不定期对广告、明显不实信息及垃圾信息进行清除！</span>
+							<span style="color: red;">请不要填入emoji表情，会发生报错！</span>
 							<v-col cols="12">
 								<v-text-field v-model="record.nickName" label="昵称*" required></v-text-field>
 							</v-col>
