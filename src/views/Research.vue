@@ -19,7 +19,7 @@
 		<div style="text-align: left; display: flex;border: 1px solid #999;">
 			<!-- <img src="https://asoulcnki.asia/favicon.ico" alt="知网查重" /> -->
 			<div>
-				<a class="link" href="https://livedb.asoulfan.com/"><h1>ASOUL DB</h1></a>
+				<a class="link" href="https://www.asdb.live/"><h1>ASOUL DB</h1></a>
 				<span style="font-size: 20px;">提供对切片内容的检索服务。</span>
 			</div>
 		</div>
