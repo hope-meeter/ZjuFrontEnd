@@ -11,6 +11,7 @@
     "@hcaptcha/vue-hcaptcha": "^0.3.0",
     "axios": "^0.21.2",
     "core-js": "^3.6.5",
+    "echarts": "^5.2.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",

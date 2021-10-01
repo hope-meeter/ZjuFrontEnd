@@ -100,6 +100,7 @@
 				加入
 			</v-btn>
 		</h1>
+		<div id="myChart" :style="{height: '500px'}"></div>
 		<v-data-table :search="search" :headers="headers" :items="contents" :items-per-page="10" class="elevation-1">
 			<template v-slot:top>
 				<v-text-field v-model="search" label="搜索" class="mx-4"></v-text-field>
@@ -115,6 +116,7 @@
 </template>
 
 <script>
+	import * as echarts from 'echarts';
 	import Axios from 'axios';
 	import VueHcaptcha from '@hcaptcha/vue-hcaptcha';
 	import {
@@ -172,9 +174,217 @@
 			}
 		},
 		mounted() {
+			this.drawLine();
 			this.getSchoolMates()
 		},
 		methods: {
+			drawLine() {
+				var chartDom = document.getElementById('myChart');
+				var myChart = echarts.init(chartDom);
+				var option;
+
+				myChart.showLoading();
+				fetch('/static/china.json')
+					.then(function(response) {
+						return response.json();
+					})
+					.then(usaJson => {
+						console.log(usaJson)
+						myChart.hideLoading();
+						echarts.registerMap('USA', usaJson, {
+						});
+						var data = [
+							{
+								name: "北京",
+								value: 25
+							},
+							{
+								name: "天津",
+								value: 4
+							},
+							{
+								name: "上海",
+								value: 12
+							},
+							{
+								name: "重庆",
+								value: 5
+							},
+							{
+								name: "河北",
+								value: 5
+							},
+							{
+								name: "河南",
+								value: 6
+							},
+							{
+								name: "云南",
+								value: 0
+							},
+							{
+								name: "辽宁",
+								value: 3
+							},
+							{
+								name: "黑龙江",
+								value: 10
+							},
+							{
+								name: "湖南",
+								value: 7
+							},
+							{
+								name: "安徽",
+								value: 12
+							},
+							{
+								name: "山东",
+								value: 8
+							},
+							{
+								name: "新疆",
+								value: 1
+							},
+							{
+								name: "江苏",
+								value: 25
+							},
+							{
+								name: "浙江",
+								value: 9
+							},
+							{
+								name: "江西",
+								value: 4
+							},
+							{
+								name: "湖北",
+								value: 9
+							},
+							{
+								name: "广西",
+								value: 7
+							},
+							{
+								name: "甘肃",
+								value: 0
+							},
+							{
+								name: "山西",
+								value: 3
+							},
+							{
+								name: "内蒙古",
+								value: 0
+							},
+							{
+								name: "陕西",
+								value: 6
+							},
+							{
+								name: "吉林",
+								value: 2
+							},
+							{
+								name: "福建",
+								value: 6
+							},
+							{
+								name: "贵州",
+								value: 0
+							},
+							{
+								name: "广东",
+								value: 16
+							},
+							{
+								name: "青海",
+								value: 0
+							},
+							{
+								name: "西藏",
+								value: 0
+							},
+							{
+								name: "四川",
+								value: 1
+							},
+							{
+								name: "宁夏",
+								value: 0
+							},
+							{
+								name: "海南",
+								value: 0
+							},
+							{
+								name: "境外",
+								value: 0
+							}
+						];
+						//241
+						data.sort(function(a, b) {
+							return a.value - b.value;
+						});
+						const mapOption = {
+							visualMap: {
+								left: 'right',
+								min: 0,
+								max: 10,
+								inRange: {
+									// prettier-ignore
+									color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf',
+										'#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026'
+									]
+								},
+								text: ['High', 'Low'],
+								calculable: true
+							},
+							series: [{
+								id: 'population',
+								type: 'map',
+								roam: true,
+								map: 'USA',
+								animationDurationUpdate: 1000,
+								universalTransition: true,
+								data: data
+							}]
+						};
+						const barOption = {
+							xAxis: {
+								type: 'value'
+							},
+							yAxis: {
+								type: 'category',
+								axisLabel: {
+									rotate: 30
+								},
+								data: data.map(function(item) {
+									return item.name;
+								})
+							},
+							animationDurationUpdate: 1000,
+							series: {
+								type: 'bar',
+								id: 'population',
+								data: data.map(function(item) {
+									return item.value;
+								}),
+								universalTransition: true
+							}
+						};
+						let currentOption = mapOption;
+						myChart.setOption(mapOption);
+						setInterval(function() {
+							currentOption = currentOption === mapOption ? barOption : mapOption;
+							myChart.setOption(currentOption, true);
+						}, 5000);
+					});
+
+				option && myChart.setOption(option);
+
+			},
 			onVerify(res) {
 				this.code = res;
 			},

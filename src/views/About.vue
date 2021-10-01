@@ -2,7 +2,7 @@
 	<div>
 		<div style="text-align: left;">
 			<p>
-				一起改进网站！Github地址：
+				一起改进网站！Github地址（请耐心等待后面图片显示）：
 				<a href="https://github.com/hope-meeter/ZjuFrontEnd/tree/master">
 					<img src="https://img.shields.io/badge/github-ZjuFrontEnd-brightgreen.svg" alt="github">
 				</a>
