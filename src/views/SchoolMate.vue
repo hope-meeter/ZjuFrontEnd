@@ -196,23 +196,23 @@
 						var data = [
 							{
 								name: "北京",
-								value: 25
+								value: 26
 							},
 							{
 								name: "天津",
-								value: 4
+								value: 5
 							},
 							{
 								name: "上海",
-								value: 12
+								value: 15
 							},
 							{
 								name: "重庆",
-								value: 5
+								value: 7
 							},
 							{
 								name: "河北",
-								value: 5
+								value: 6
 							},
 							{
 								name: "河南",
@@ -224,7 +224,7 @@
 							},
 							{
 								name: "辽宁",
-								value: 3
+								value: 4
 							},
 							{
 								name: "黑龙江",
@@ -240,7 +240,7 @@
 							},
 							{
 								name: "山东",
-								value: 8
+								value: 9
 							},
 							{
 								name: "新疆",
@@ -248,11 +248,11 @@
 							},
 							{
 								name: "江苏",
-								value: 25
+								value: 29
 							},
 							{
 								name: "浙江",
-								value: 9
+								value: 16
 							},
 							{
 								name: "江西",
@@ -260,7 +260,7 @@
 							},
 							{
 								name: "湖北",
-								value: 9
+								value: 10
 							},
 							{
 								name: "广西",
@@ -280,7 +280,7 @@
 							},
 							{
 								name: "陕西",
-								value: 6
+								value: 8
 							},
 							{
 								name: "吉林",
@@ -288,7 +288,7 @@
 							},
 							{
 								name: "福建",
-								value: 6
+								value: 8
 							},
 							{
 								name: "贵州",
@@ -296,7 +296,7 @@
 							},
 							{
 								name: "广东",
-								value: 16
+								value: 21
 							},
 							{
 								name: "青海",
@@ -319,6 +319,10 @@
 								value: 0
 							},
 							{
+								name: "香港",
+								value: 1
+							},
+							{
 								name: "境外",
 								value: 0
 							}
@@ -331,7 +335,7 @@
 							visualMap: {
 								left: 'right',
 								min: 0,
-								max: 10,
+								max: 30,
 								inRange: {
 									// prettier-ignore
 									color: ['#FFFFFF', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf',
