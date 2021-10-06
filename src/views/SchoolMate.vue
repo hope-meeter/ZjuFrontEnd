@@ -8,7 +8,7 @@
 				<v-card-text>
 					<v-container>
 						<v-row>
-							<span>站长不定期对广告、明显不实信息及垃圾信息进行清除！</span>
+							<span style="text-align: left;">站长不定期对广告、明显不实信息及垃圾信息进行清除！</span>
 							<span style="color: red;">请不要填入emoji表情，会发生报错！</span>
 							<v-col cols="12">
 								<v-text-field v-model="record.nickName" label="昵称*" required></v-text-field>
@@ -100,7 +100,8 @@
 				加入
 			</v-btn>
 		</h1>
-		<div id="myChart" :style="{height: '500px'}"></div>
+		<h5>校友分布地图 20211006更新</h5>
+		<div id="myChart" :style="{height: '300px'}"></div>
 		<v-data-table :search="search" :headers="headers" :items="contents" :items-per-page="10" class="elevation-1">
 			<template v-slot:top>
 				<v-text-field v-model="search" label="搜索" class="mx-4"></v-text-field>
@@ -196,19 +197,19 @@
 						var data = [
 							{
 								name: "北京",
-								value: 26
+								value: 29
 							},
 							{
 								name: "天津",
-								value: 5
+								value: 6
 							},
 							{
 								name: "上海",
-								value: 15
+								value: 20
 							},
 							{
 								name: "重庆",
-								value: 7
+								value: 12
 							},
 							{
 								name: "河北",
@@ -216,7 +217,7 @@
 							},
 							{
 								name: "河南",
-								value: 6
+								value: 7
 							},
 							{
 								name: "云南",
@@ -228,39 +229,39 @@
 							},
 							{
 								name: "黑龙江",
-								value: 10
-							},
-							{
-								name: "湖南",
-								value: 7
-							},
-							{
-								name: "安徽",
 								value: 12
 							},
 							{
+								name: "湖南",
+								value: 10
+							},
+							{
+								name: "安徽",
+								value: 13
+							},
+							{
 								name: "山东",
-								value: 9
+								value: 12
 							},
 							{
 								name: "新疆",
-								value: 1
+								value: 2
 							},
 							{
 								name: "江苏",
-								value: 29
+								value: 36
 							},
 							{
 								name: "浙江",
-								value: 16
+								value: 18
 							},
 							{
 								name: "江西",
-								value: 4
+								value: 5
 							},
 							{
 								name: "湖北",
-								value: 10
+								value: 20
 							},
 							{
 								name: "广西",
@@ -272,15 +273,15 @@
 							},
 							{
 								name: "山西",
-								value: 3
+								value: 5
 							},
 							{
 								name: "内蒙古",
-								value: 0
+								value: 1
 							},
 							{
 								name: "陕西",
-								value: 8
+								value: 10
 							},
 							{
 								name: "吉林",
@@ -288,7 +289,7 @@
 							},
 							{
 								name: "福建",
-								value: 8
+								value: 13
 							},
 							{
 								name: "贵州",
@@ -296,7 +297,7 @@
 							},
 							{
 								name: "广东",
-								value: 21
+								value: 24
 							},
 							{
 								name: "青海",
@@ -312,7 +313,7 @@
 							},
 							{
 								name: "宁夏",
-								value: 0
+								value: 2
 							},
 							{
 								name: "海南",
@@ -320,14 +321,14 @@
 							},
 							{
 								name: "香港",
-								value: 1
+								value: 2
 							},
 							{
 								name: "境外",
-								value: 0
+								value: 14
 							}
 						];
-						//241
+						
 						data.sort(function(a, b) {
 							return a.value - b.value;
 						});
@@ -355,35 +356,35 @@
 								data: data
 							}]
 						};
-						const barOption = {
-							xAxis: {
-								type: 'value'
-							},
-							yAxis: {
-								type: 'category',
-								axisLabel: {
-									rotate: 30
-								},
-								data: data.map(function(item) {
-									return item.name;
-								})
-							},
-							animationDurationUpdate: 1000,
-							series: {
-								type: 'bar',
-								id: 'population',
-								data: data.map(function(item) {
-									return item.value;
-								}),
-								universalTransition: true
-							}
-						};
-						let currentOption = mapOption;
+						// const barOption = {
+						// 	xAxis: {
+						// 		type: 'value'
+						// 	},
+						// 	yAxis: {
+						// 		type: 'category',
+						// 		axisLabel: {
+						// 			rotate: 30
+						// 		},
+						// 		data: data.map(function(item) {
+						// 			return item.name;
+						// 		})
+						// 	},
+						// 	animationDurationUpdate: 1000,
+						// 	series: {
+						// 		type: 'bar',
+						// 		id: 'population',
+						// 		data: data.map(function(item) {
+						// 			return item.value;
+						// 		}),
+						// 		universalTransition: true
+						// 	}
+						// };
+						// let currentOption = mapOption;
 						myChart.setOption(mapOption);
-						setInterval(function() {
-							currentOption = currentOption === mapOption ? barOption : mapOption;
-							myChart.setOption(currentOption, true);
-						}, 5000);
+						// setInterval(function() {
+						// 	currentOption = currentOption === mapOption ? barOption : mapOption;
+						// 	myChart.setOption(currentOption, true);
+						// }, 5000);
 					});
 
 				option && myChart.setOption(option);
