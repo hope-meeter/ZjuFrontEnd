@@ -54,6 +54,18 @@
 						</v-list-item-content>
 					</v-list-item>
 				</router-link>
+				<router-link to="/services">
+					<v-list-item link>
+						<v-list-item-icon>
+							<v-icon>mdi-network</v-icon>
+						</v-list-item-icon>
+						<v-list-item-content>
+							<v-list-item-title>
+								网络服务
+							</v-list-item-title>
+						</v-list-item-content>
+					</v-list-item>
+				</router-link>
 				<router-link to="/about">
 					<v-list-item link>
 						<v-list-item-icon>

@@ -100,7 +100,7 @@
 				加入
 			</v-btn>
 		</h1>
-		<h5>校友分布地图 20211006更新</h5>
+		<h5>校友分布地图 20211018更新</h5>
 		<div id="myChart" :style="{height: '300px'}"></div>
 		<v-data-table :search="search" :headers="headers" :items="contents" :items-per-page="10" class="elevation-1">
 			<template v-slot:top>
@@ -197,15 +197,15 @@
 						var data = [
 							{
 								name: "北京",
-								value: 29
+								value: 35
 							},
 							{
 								name: "天津",
-								value: 6
+								value: 7
 							},
 							{
 								name: "上海",
-								value: 20
+								value: 21
 							},
 							{
 								name: "重庆",
@@ -217,7 +217,7 @@
 							},
 							{
 								name: "河南",
-								value: 7
+								value: 9
 							},
 							{
 								name: "云南",
@@ -225,11 +225,11 @@
 							},
 							{
 								name: "辽宁",
-								value: 4
+								value: 7
 							},
 							{
 								name: "黑龙江",
-								value: 12
+								value: 13
 							},
 							{
 								name: "湖南",
@@ -237,11 +237,11 @@
 							},
 							{
 								name: "安徽",
-								value: 13
+								value: 15
 							},
 							{
 								name: "山东",
-								value: 12
+								value: 14
 							},
 							{
 								name: "新疆",
@@ -249,11 +249,11 @@
 							},
 							{
 								name: "江苏",
-								value: 36
+								value: 38
 							},
 							{
 								name: "浙江",
-								value: 18
+								value: 19
 							},
 							{
 								name: "江西",
@@ -261,11 +261,11 @@
 							},
 							{
 								name: "湖北",
-								value: 20
+								value: 21
 							},
 							{
 								name: "广西",
-								value: 7
+								value: 8
 							},
 							{
 								name: "甘肃",
@@ -281,7 +281,7 @@
 							},
 							{
 								name: "陕西",
-								value: 10
+								value: 11
 							},
 							{
 								name: "吉林",
@@ -289,7 +289,7 @@
 							},
 							{
 								name: "福建",
-								value: 13
+								value: 14
 							},
 							{
 								name: "贵州",
@@ -297,7 +297,7 @@
 							},
 							{
 								name: "广东",
-								value: 24
+								value: 31
 							},
 							{
 								name: "青海",
@@ -336,7 +336,7 @@
 							visualMap: {
 								left: 'right',
 								min: 0,
-								max: 30,
+								max: 40,
 								inRange: {
 									// prettier-ignore
 									color: ['#FFFFFF', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf',
