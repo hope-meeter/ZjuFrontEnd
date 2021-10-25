@@ -8,8 +8,13 @@
 				<span style="font-size: 20px;">一个小游戏，仅能在手机上正常使用。</span>
 			</div>
 		</div>
+		<div style="text-align: left; display: flex;border: 1px solid #999;">
+			<div>
+				<a class="link" href="https://doc.jiaxintang.top/2/"><h1>围猎嘉心糖</h1></a>
+				<span style="font-size: 20px;">天下武功，唯快不破，实时计算排名。</span>
+			</div>
+		</div>
 	</div>
-
 </template>
 
 <script>

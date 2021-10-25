@@ -100,10 +100,23 @@
 				加入
 			</v-btn>
 		</h1>
+		<h1>_</h1>
 		<h5>校友分布地图 20211018更新</h5>
 		<div id="myChart" :style="{height: '300px'}"></div>
+		<h1>_</h1>
+		<v-data-table hide-default-footer dense :headers="SchoolHeaders" :items="SchoolContents"
+			:items-per-page="10" class="elevation-1">
+			<template v-slot:top>
+				<h5>硬科排名：加入人数最多学校TOP10</h5>
+			</template>
+			<template v-slot:item.index="{ index }">
+				{{index + 1}}
+			</template>
+		</v-data-table>
+		<h1>_</h1>
 		<v-data-table :search="search" :headers="headers" :items="contents" :items-per-page="10" class="elevation-1">
 			<template v-slot:top>
+				<h5>校友名单</h5>
 				<v-text-field v-model="search" label="搜索" class="mx-4"></v-text-field>
 			</template>
 			<template v-slot:item.operation="{ item }">
@@ -142,6 +155,23 @@
 					"contactMethod": null,
 					"contactContent": null
 				},
+				SchoolHeaders: [{
+						text: 'TOP',
+						value: 'index'
+					},
+					{
+						text: '学校',
+						value: 'schoolName'
+					},
+					{
+						text: '人数',
+						value: 'repeats'
+					}
+				],
+				SchoolContents: [{
+					schoolName: '枝江大学',
+					repeats: 0
+				}],
 				headers: [{
 						text: '学号',
 						align: 'start',
@@ -176,7 +206,8 @@
 		},
 		mounted() {
 			this.drawLine();
-			this.getSchoolMates()
+			this.getSchools();
+			this.getSchoolMates();
 		},
 		methods: {
 			drawLine() {
@@ -192,10 +223,8 @@
 					.then(usaJson => {
 						console.log(usaJson)
 						myChart.hideLoading();
-						echarts.registerMap('USA', usaJson, {
-						});
-						var data = [
-							{
+						echarts.registerMap('USA', usaJson, {});
+						var data = [{
 								name: "北京",
 								value: 35
 							},
@@ -328,7 +357,7 @@
 								value: 14
 							}
 						];
-						
+
 						data.sort(function(a, b) {
 							return a.value - b.value;
 						});
@@ -439,6 +468,15 @@
 					console.log(response)
 					this.getSchoolMates()
 					this.addRecordDialog = false;
+				}).catch((error) => {
+					alert(error)
+					console.log(error);
+				})
+			},
+			getSchools() {
+				var getListUrl = "https://university.jiaxintang.top/getSchools";
+				Axios.get(getListUrl).then((response) => {
+					this.SchoolContents = response.data;
 				}).catch((error) => {
 					alert(error)
 					console.log(error);

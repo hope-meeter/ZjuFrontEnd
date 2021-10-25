@@ -12,6 +12,25 @@
 			</p>
 		</div>
 		<div>
+			<h1>_</h1>
+			<v-card class="mx-auto" id="privacy">
+				<v-card-text style="text-align: left;">
+					<div>20211025</div>
+					<p class="text-h4 text--primary">
+						网站安全说明
+					</p>
+					<div class="text--primary">
+						<p>如果您在本网站发现任何安全漏洞，欢迎将其详细细节发送给我me@zhijiang.university。</p>
+						<p>站长会尽最大努力完善网站安全性，对发现网站漏洞发现者表示诚挚感谢！</p>
+						<p><b>但不欢迎类似DDOS攻击、CC攻击等扰乱网站正常工作的行为。</b></p>
+						<p>一旦您提交的漏洞核实后，您的相关介绍推广信息也可以被添加到这里。</p>
+						<p>欢迎与我交流。</p>
+					</div>
+				</v-card-text>
+			</v-card>
+		</div>
+		<h1>_</h1>
+		<div>
 			<v-card class="mx-auto" id="privacy">
 				<v-card-text style="text-align: left;">
 					<div>20210910</div>

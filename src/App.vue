@@ -98,7 +98,7 @@
 		</v-main>
 
 		<v-footer app>
-			<span style="text-align: center;">域名售卖和网站使用问题可联系站长：me@zhijiang.university</span>
+			<span style="text-align: center;">网站使用问题和域名售卖可联系站长：me@zhijiang.university</span>
 		</v-footer>
 	</v-app>
 </template>
