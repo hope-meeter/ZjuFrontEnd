@@ -4,6 +4,12 @@
 		<h4 style="text-align: left;">本页会不断更新，敬请关注！</h4>
 		<div style="text-align: left; display: flex;border: 1px solid #999;">
 			<div>
+				<a class="link" href="https://f.jiaxintang.top/"><h1>枝江大学图书馆</h1></a>
+				<span style="font-size: 20px;">交流学术问题的地方。</span>
+			</div>
+		</div>
+		<div style="text-align: left; display: flex;border: 1px solid #999;">
+			<div>
 				<a class="link" href="https://doc.jiaxintang.top/1/"><h1>合成大嘉然</h1></a>
 				<span style="font-size: 20px;">一个小游戏，仅能在手机上正常使用。</span>
 			</div>

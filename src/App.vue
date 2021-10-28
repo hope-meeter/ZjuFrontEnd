@@ -41,6 +41,19 @@
 						</v-list-item-content>
 					</v-list-item>
 				</router-link>
+				<router-link to="/library">
+					<v-list-item link>
+						<v-list-item-icon>
+							<v-icon>mdi-book</v-icon>
+						</v-list-item-icon>
+
+						<v-list-item-content>
+							<v-list-item-title>
+								图书馆
+							</v-list-item-title>
+						</v-list-item-content>
+					</v-list-item>
+				</router-link>
 				<router-link to="/schoolMate">
 					<v-list-item link>
 						<v-list-item-icon>
