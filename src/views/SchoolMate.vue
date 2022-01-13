@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="padding: 5% 10% !important;">
 		<v-dialog v-if="addRecordDialog" v-model="addRecordDialog" max-width="600px">
 			<v-card>
 				<v-card-title>
@@ -101,7 +101,7 @@
 			</v-btn>
 		</h1>
 		<h1>_</h1>
-		<h5>校友分布地图 20211018更新</h5>
+		<h5>校友分布地图(每分钟更新)</h5>
 		<div id="myChart" :style="{height: '300px'}"></div>
 		<h1>_</h1>
 		<v-data-table hide-default-footer dense :headers="SchoolHeaders" :items="SchoolContents"
@@ -202,12 +202,14 @@
 					text: '恩仇趁年华轻剑快马'
 				}],
 				schoolList: schoolList,
+				provinceSchools: null
 			}
 		},
 		mounted() {
 			this.drawLine();
 			this.getSchools();
 			this.getSchoolMates();
+			this.getProvinceSchools();
 		},
 		methods: {
 			drawLine() {
@@ -224,7 +226,7 @@
 						console.log(usaJson)
 						myChart.hideLoading();
 						echarts.registerMap('USA', usaJson, {});
-						var data = [{
+						var data = this.provinceSchools || [{
 								name: "北京",
 								value: 35
 							},
@@ -361,11 +363,13 @@
 						data.sort(function(a, b) {
 							return a.value - b.value;
 						});
+						console.log("max", data[0])
+						console.log("all", data)
 						const mapOption = {
 							visualMap: {
 								left: 'right',
 								min: 0,
-								max: 40,
+								max: data[data.length - 2].value,
 								inRange: {
 									// prettier-ignore
 									color: ['#FFFFFF', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf',
@@ -477,6 +481,16 @@
 				var getListUrl = "https://university.jiaxintang.top/getSchools";
 				Axios.get(getListUrl).then((response) => {
 					this.SchoolContents = response.data;
+				}).catch((error) => {
+					alert(error)
+					console.log(error);
+				})
+			},
+			getProvinceSchools() {
+				var getListUrl = "https://university.jiaxintang.top/getProvinceSchools";
+				Axios.get(getListUrl).then((response) => {
+					this.provinceSchools = response.data;
+					this.drawLine();
 				}).catch((error) => {
 					alert(error)
 					console.log(error);

@@ -105,7 +105,7 @@
 
 
 		<v-main>
-			<v-container fluid style="padding: 5% 10%;">
+			<v-container fluid>
 				<router-view></router-view>
 			</v-container>
 		</v-main>

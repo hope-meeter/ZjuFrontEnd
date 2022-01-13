@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="padding: 5% 10% !important;">
 		<h1 style="text-align: left;">网络服务</h1>
 		<h4 style="text-align: left;">本页会不断更新，敬请关注！</h4>
 		<div style="text-align: left; display: flex;border: 1px solid #999;">

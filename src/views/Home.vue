@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="padding: 5% 10% !important;">
 		<h1 style="text-align: left;">枝江大学概况</h1>
 		<div style="text-align: left;text-indent:2em; font-size: 20px;">
 			<p>

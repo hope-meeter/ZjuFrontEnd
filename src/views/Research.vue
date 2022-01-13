@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="padding: 5% 10% !important;">
 		<h1 style="text-align: left;">科学研究</h1>
 		<h4 style="text-align: left;">以下产品与本站无关，仅为友情链接，请仔细甄别！</h4>
 		<div style="text-align: left; display: flex;border: 1px solid #999;">

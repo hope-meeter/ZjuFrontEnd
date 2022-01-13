@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="padding: 5% 10% !important;">
 		<div style="text-align: left;">
 			<p>
 				一起改进网站！Github地址（请耐心等待后面图片显示）：
